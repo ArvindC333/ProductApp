@@ -19,6 +19,7 @@ exports.customertrack_create = function (req, res, next) {
             lengthofinter: req.body.lengthofinter,
             additionalcoms: req.body.additionalcoms,
             banklocation: req.body.banklocation,
+            empid: req.body.empid
         }
     );
 

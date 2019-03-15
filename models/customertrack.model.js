@@ -13,6 +13,7 @@ let customertrackSchema = new Schema({
     dateofinter: {type: Date, required: true, default: Date.now},
     additionalcoms: {type: String, required: true, max:1000},
     banklocation: {type: String, required: true, enum: ['BankNorth','BankEast','BankWest','BankSouth']},
+    empid: {type: String, required: true},
 
 
     });
