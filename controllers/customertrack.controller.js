@@ -31,3 +31,29 @@ exports.customertrack_create = function (req, res, next) {
     })
 };
 
+//it finds by id
+exports.customertrack_details_banklocation = function (req, res) {
+    Customertrack.find({banklocation: req.params.banklocation}, function (err, custometrack) {
+        if (err) return next(err);
+        res.send(custometrack);
+    })
+};
+
+//find by interactions
+exports.customertrack_details_typeofinter = function (req, res) {
+    Customertrack.find({typeofinter: req.params.typeofinter}, function (err, customertrack) {
+        if (err) return next(err);
+        res.send(customertrack);
+    })
+};
+
+//find by date range
+exports.customertrack_details_time = function (req, res) {
+    Customertrack.find({dateofinter:{$gte: req.params.sdate, $lte: req.params.edate}}, function (err, customertrack) {
+        if (err) return next(err);
+        res.send(customertrack);
+    })
+};
+
+
+
